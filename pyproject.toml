@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillaudit"
+version = "0.1.0"
+description = "Static audit of copied AI agent skills in the GitSkills dataset (staleness, risky copies, bundled executables)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Lucas Hill" },
+  { name = "Justin Mehl" },
+  { name = "Mahroush Chowdhury" },
+]
+dependencies = []  # standard library only; matplotlib is optional (charts)
+
+[project.optional-dependencies]
+charts = ["matplotlib>=3.7"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+skillaudit = "skillaudit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]

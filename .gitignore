@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+build/
+dist/
+
+# Dataset files and run outputs are large and regenerable; never commit them.
+data/
+runs/
+
+.DS_Store
